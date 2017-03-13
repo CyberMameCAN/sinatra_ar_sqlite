@@ -1,0 +1,14 @@
+%h2 BBS
+
+%ul
+  - @comments.each do |comment|
+    %li{:data_id => "#{comment.id}"}<>
+      - es = h comment.body
+      #{comment.created_at}
+      %b #{es}
+
+%h3 Add New
+%form{:method => "post", :action => "/new"}
+  %input{:type => "text", :name => "body"}
+  %input{:type => "submit", :value => "post"}   
+

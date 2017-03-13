@@ -1,0 +1,31 @@
+!!! 5
+%html
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{:content =>"IE=edge", :name => "X-UA-Compatible"}
+    %title #{@title} | #{@description}
+    %meta{:content => "Sinatra", :name => "keywords"}
+    %meta{:content => "#{@description}", :name => "description"}
+    %link{:href => "/css/normalize.css", :media => "all", :type => "text/css", :rel => "stylesheet"}
+    %script{:src => "/js/modernizr-2.6.2.min.js"}
+    <!--[if lt IE 9]>
+    %script{:src => "/js/respond.min.js"}
+    <![endif]-->
+
+  %body
+    .container
+      %h2 Enjoy Sinatra life to the full.
+      %span<>
+        #{@subtitle2} Created by
+        %a{:href => "https://twitter.com/CyberMameCAN"} #{@author}
+
+      = yield
+      
+    %script{:src => "/js/jquery.min.js"}
+    %script{:src => "/js/jquery.easing.1.3.js"}
+    %script{:src => "/js/jquery.waypoints.min.js"}
+    
